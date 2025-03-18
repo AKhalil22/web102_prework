@@ -21,9 +21,13 @@ body {
 
 .stats-container {
     display: flex;
+    align-items: center;
 }
 
-/* Hover effect */
+/* 
+Hover effect
+SKC3: .class
+*/
 .stats-container:hover {
     cursor: pointer;
     box-shadow: 0 0 30px lightblue;
