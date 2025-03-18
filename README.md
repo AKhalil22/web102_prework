@@ -4,11 +4,7 @@ Submitted by: **Ammar Khalil**
 
 **Name of your app** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
-<<<<<<< HEAD
 Time spent: **3** hours spent in total
-=======
-Time spent: **2** hours spent in total
->>>>>>> e7050fb5d73623f36011f9fcaa8e795dc7f84a68
 
 ## Required Features
 
