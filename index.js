@@ -12,7 +12,7 @@ const GAMES_JSON = JSON.parse(GAMES_DATA)
 
 // remove all child elements from a parent element in the DOM
 function deleteChildElements(parent) {
-    while (parent.firstChild) { // SKC4: 15 
+    while (parent.firstChild) { // C2SKC4: 15 
         parent.removeChild(parent.firstChild);
     }
 }
@@ -29,27 +29,36 @@ const gamesContainer = document.getElementById("games-container");
 function addGamesToPage(games) {
 
     // loop over each item in the data
-
-
+    for (const game of games) { // (Challenge 3) C3SKC1: 11 games/times
         // create a new div element, which will become the game card
-
+        let newDiv = document.createElement("div");
 
         // add the class game-card to the list
-
+        newDiv.classList.add("game-card")
 
         // set the inner HTML using a template literal to display some info 
         // about each game
         // TIP: if your images are not displaying, make sure there is space
         // between the end of the src attribute and the end of the tag ("/>")
+        let precentageFunded = ((game.pledged / game.goal)*100).toFixed(2); // Round to nearest 2 decimal places
+        const gameInfo = `
 
+            <h1>${game.name}</h1>
+            <img class="game-img" src="${game.img}"/>
+            <p>${game.description}</p>
+            <p><strong>Funded: ${precentageFunded}% | Backers: ${game.backers}</strong></p>
+        `;
+        newDiv.innerHTML = gameInfo;
 
         // append the game to the games-container
-
-}
+        document.getElementById("games-container").append(newDiv);
+    }
+} // C3SKC2: yellow
 
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
-
+addGamesToPage(GAMES_JSON) // C3SKC3: GAMES_JSON
+// C3C3SK: 11seafoamGAMES_JSON
 
 /*************************************************************************************
  * Challenge 4: Create the summary statistics at the top of the page displaying the
