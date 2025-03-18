@@ -111,7 +111,7 @@ function filterUnfundedOnly() {
 
     // C5SKC1: 7 
     console.log(listOfUnfundedGames);
-    
+
     // use the function we previously created to add the unfunded games to the DOM
     addGamesToPage(listOfUnfundedGames);
 }
@@ -121,10 +121,15 @@ function filterFundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have met or exceeded their goal
+    let listOfFundedGames = GAMES_JSON.filter((game) => {
+        return game.pledged >= game.goal
+    });
 
+    // C5SKC2: 11 - 7 = 4
+    console.log(listOfFundedGames);
 
     // use the function we previously created to add unfunded games to the DOM
-
+    addGamesToPage(listOfFundedGames);
 }
 
 // show all games
@@ -132,7 +137,7 @@ function showAllGames() {
     deleteChildElements(gamesContainer);
 
     // add all games from the JSON data to the DOM
-
+    addGamesToPage(GAMES_JSON);
 }
 
 // select each button in the "Our Games" section
@@ -141,7 +146,12 @@ const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
-
+unfundedBtn.addEventListener("click", filterUnfundedOnly)
+fundedBtn.addEventListener("click", filterFundedOnly)
+allBtn.addEventListener("click", showAllGames)
+// C5SKC3: FLANNEL
+// C5SKC4: click
+// C5SK: 74FLANNELclick
 
 /*************************************************************************************
  * Challenge 6: Add more information at the top of the page about the company.
