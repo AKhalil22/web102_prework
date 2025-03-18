@@ -1,4 +1,6 @@
 // Image credits: Kickstarter
+// Secret Key Component 1 (SKC1): 6
+
 const games = ` [
   {
     "name": "Heroes Of Mythic Americas",
