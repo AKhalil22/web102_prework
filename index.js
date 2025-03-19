@@ -165,7 +165,7 @@ const unfundedGames = GAMES_JSON.reduce((acc, game) => {
     // If  game.backers < game.goal, then acc += 1. Else acc = acc
     return game.pledged < game.goal ? acc + 1 : acc;
 }, 0);
-console.log(unfundedGames);
+// console.log(unfundedGames);
 
 // create a string that explains the number of unfunded games using the ternary operator
 let gameString = unfundedGames > 1 ? "games" : "game";
@@ -197,7 +197,19 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+let [first, second, ...others] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+let topPledged = document.createElement("p");
+topPledged.innerHTML = first.name;
+document.getElementById("first-game").append(topPledged);
 
 // do the same for the runner up item
+let secondPledged = document.createElement("p");
+secondPledged.innerHTML = second.name;
+document.getElementById("second-game").append(secondPledged);
+
+// C7SKC1: Zoo
+// C7SKC2: How
+// C7SKC3: CEDAR
+// C7SK: ZooHowCEDAR
