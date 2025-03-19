@@ -33,9 +33,10 @@ GIF created with LiceCap
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
-## Notes
+## Notes/Challenges
 
-Describe any challenges encountered while building the app.
+1) Refamilarizing with HTML, CSS, & JS - Turned to Google or [HTML Documentation](https://developer.mozilla.org/en-US/) for reference.
+2) Carefully reading inputs & outputs for each challenge.
 
 ## License
 
