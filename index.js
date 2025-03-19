@@ -42,7 +42,6 @@ function addGamesToPage(games) {
         // between the end of the src attribute and the end of the tag ("/>")
         let precentageFunded = ((game.pledged / game.goal)*100).toFixed(2); // Round to nearest 2 decimal places
         const gameInfo = `
-
             <h1>${game.name}</h1>
             <img class="game-img" src="${game.img}"/>
             <p>${game.description}</p>
@@ -169,9 +168,21 @@ const unfundedGames = GAMES_JSON.reduce((acc, game) => {
 console.log(unfundedGames);
 
 // create a string that explains the number of unfunded games using the ternary operator
+let gameString = unfundedGames > 1 ? "games" : "game";
+let remainString = unfundedGames <= 1 ? "remains" : "remain";
 
+const displayStr = `A total of $${totalPledged.toLocaleString('en-US')} has been raised for ${totalGames} ${gameString}. Currently, ${unfundedGames} ${gameString}
+${remainString} unfunded. We need your help to fund these amazing games!`;
+// C6SKC1: toLocaleString
 
 // create a new DOM element containing the template string and append it to the description container
+let newDescription = document.createElement('p');
+newDescription.innerHTML = displayStr;
+descriptionContainer.append(newDescription);
+// C6SKC2: <div>
+// C6SKC3: 1
+// C6SKC4: IVY
+// C6SK: toLocaleString<div>1IVY
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
